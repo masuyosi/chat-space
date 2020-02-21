@@ -43,6 +43,19 @@
   &__group-list {
     background-color: #2f3e51;
     height: calc(100vh - 100px);
+      &__chat-group {
+        height: 91px;
+        width: 260px;
+        margin: 0 auto;
+        &__group-name {
+          font-size: 15px;
+          padding: 20px 0 5px 0;
+        }
+        &__latest-message {
+          font-size: 11px;
+          padding-bottom: 40px;
+        }
+      }
   }
 }
 
