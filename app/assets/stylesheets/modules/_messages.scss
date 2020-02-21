@@ -10,15 +10,34 @@
   width: 300px;
   height: 100vh;
   background-color: #253141;
+  color: #fff;
+  font-weight: bold;
   &__user-name {
     height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     &__top-items {
-      background-color: #333;
-      height: 20px;
+      line-height: 20px;
       width: 260px;
+      display: flex;
+      justify-content: space-between;
+      &__name {
+        font-size: 16px;
+      }
+      &__icons {
+        width: 60px;
+        text-align: right;
+        text-decoration: none;
+      }
+      &__icon {
+        color: #fff;
+        &__edit {
+        }
+        &__cog {
+          padding-left: 5px;
+        }
+      }
     }
   }
   &__group-list {
