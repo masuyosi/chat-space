@@ -4,7 +4,7 @@
       .side-bar__user-name__top-items__name
         = current_user.name
       .side-bar__user-name__top-items__icons
-        = link_to "#", class: "side-bar__user-name__top-items__icon" do
+        = link_to new_group_path, class: "side-bar__user-name__top-items__icon" do
           = icon('fa', 'edit', class: 'side-bar__user-name__top-items__icon__edit')
           %span<>
         = link_to edit_user_path(current_user), class: "side-bar__user-name__top-items__icon" do
