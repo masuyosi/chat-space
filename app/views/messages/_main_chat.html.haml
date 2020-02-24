@@ -1,0 +1,34 @@
+.chat-main
+  .chat-main__group-info
+    .chat-main__group-info__left-content
+      .chat-main__group-info__left-content__group-name
+        test
+      .chat-main__group-info__left-content__join-member
+        Member : masa
+    .chat-main__group-info__button
+      = link_to "EDIT", "#", class: "chat-main__group-info__edit-button"
+  .chat-main__message-list
+    .chat-main__message-list__message-container
+      .chat-main__message-list__message-container__handle-container
+        .chat-main__message-list__message-container__handle-container__handle
+          masa
+        .chat-main__message-list__message-container__handle-container__created-at
+          2019/11/20(Wed) 17:43:01
+      .chat-main__message-list__message-container__message
+        おはよう！
+    .chat-main__message-list__message-container
+      .chat-main__message-list__message-container__handle-container
+        .chat-main__message-list__message-container__handle-container__handle
+          masa
+        .chat-main__message-list__message-container__handle-container__created-at
+          2019/11/20(Wed) 17:43:01
+      .chat-main__message-list__message-container__message
+        おはよう！
+  .chat-main__message-form
+    %form.chat-main__message-form__container
+      .input-box
+        %input{type: "text", placeholder: "tyep a message", class: "input-box__text"}
+        %label{class: 'input-box__image', for: 'img555'}
+          = icon('far', 'image')
+          %input{type: "file", class: 'input-box__image__file', id: 'img555'}
+      %input{type: "submit", value: 'Send', class: "submit-btn"}
