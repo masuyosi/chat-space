@@ -4,6 +4,7 @@ $message-color: #434A54;
 
 * {
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 .wrapper {
@@ -54,10 +55,12 @@ $message-color: #434A54;
         &__group-name {
           font-size: 15px;
           padding: 20px 0 5px 0;
+          color: $sidebar-color;
         }
         &__latest-message {
           font-size: 11px;
           padding-bottom: 40px;
+          color: $sidebar-color;
         }
       }
   }
