@@ -2,33 +2,22 @@
   .chat-main__group-info
     .chat-main__group-info__left-content
       .chat-main__group-info__left-content__group-name
-        test
+        = @group.name
       .chat-main__group-info__left-content__join-member
-        Member : masa
+        Member：
+        %ul
+          - @group.users.each do |user|
+            %li= user.name
     .chat-main__group-info__button
-      = link_to "EDIT", "#", class: "chat-main__group-info__edit-button"
+      = link_to "EDIT", edit_group_path(current_user), class: "chat-main__group-info__edit-button"
   .chat-main__message-list
     .chat-main__message-list__message-container
-      .chat-main__message-list__message-container__handle-container
-        .chat-main__message-list__message-container__handle-container__handle
-          masa
-        .chat-main__message-list__message-container__handle-container__created-at
-          2019/11/20(Wed) 17:43:01
-      .chat-main__message-list__message-container__message
-        おはよう！
-    .chat-main__message-list__message-container
-      .chat-main__message-list__message-container__handle-container
-        .chat-main__message-list__message-container__handle-container__handle
-          masa
-        .chat-main__message-list__message-container__handle-container__created-at
-          2019/11/20(Wed) 17:43:01
-      .chat-main__message-list__message-container__message
-        おはよう！
+      = render @messages
   .chat-main__message-form
-    %form.chat-main__message-form__container
+    = form_for [@group, @message] do |f|
       .input-box
-        %input{type: "text", placeholder: "tyep a message", class: "input-box__text"}
-        %label{class: 'input-box__image', for: 'img555'}
+        = f.text_field :body, class: 'input-box__text', placeholder: 'type a message'
+        = f.label :image, class: 'input-box__image' do
           = icon('far', 'image')
-          %input{type: "file", class: 'input-box__image__file', id: 'img555'}
-      %input{type: "submit", value: 'Send', class: "submit-btn"}
+          = f.file_field :image, class: 'input-box__image__file'
+      = f.submit 'Send', class: 'submit-btn'
