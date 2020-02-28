@@ -7,5 +7,6 @@ class User < ApplicationRecord
   has_many :group_users
   has_many :groups, through: :group_users
   has_many :messages
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
+  validates :password, length: { minimum: 8 }
 end
