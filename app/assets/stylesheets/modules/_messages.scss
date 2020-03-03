@@ -1,6 +1,9 @@
 $sidebar-color: #fff;
 $btn-color: #38aef0;
 $message-color: #434A54;
+body {
+  overflow: hidden;
+}
 
 * {
   box-sizing: border-box;
