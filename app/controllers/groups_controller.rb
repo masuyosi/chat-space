@@ -10,7 +10,11 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(group_params)
+    @group.users = []
     if @group.save
+      group_params[:user_ids].each do |user_id|
+        GroupUser.create(group: @group, user_id: user_id)
+      end
       redirect_to root_path, notice: 'グループを作成しました'
     else
       render :new
