@@ -9,10 +9,9 @@
           - @group.users.each do |user|
             %li= user.name
     .chat-main__group-info__button
-      = link_to "EDIT", edit_group_path(current_user), class: "chat-main__group-info__edit-button"
+      = link_to "EDIT", edit_group_path(@group), class: "chat-main__group-info__edit-button"
   .chat-main__message-list
-    .chat-main__message-list__message-container
-      = render @messages
+    = render @messages
   .chat-main__message-form
     = form_for [@group, @message] do |f|
       .input-box
