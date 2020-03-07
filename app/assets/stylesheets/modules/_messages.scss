@@ -119,6 +119,7 @@ body {
     padding: 35px 0 0 40px;
     overflow: auto;
     &__message-container {
+      margin-bottom: 46px;
       &__handle-container {
         display: flex;
         padding-bottom: 12px;
@@ -135,7 +136,7 @@ body {
       &__message {
         color: $message-color;
         font-size: 14px;
-        margin-bottom: 46px;
+        margin-bottom: 12px;
       }
     }
   }
